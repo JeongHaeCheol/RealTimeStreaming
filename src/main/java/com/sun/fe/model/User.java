@@ -1,26 +1,20 @@
 package com.sun.fe.model;
 
-import lombok.Data;
+import java.util.Collection;
 
+import org.springframework.security.core.GrantedAuthority;
+
+import lombok.Data;
 
 
 @Data
 public class User {
-	
-	private int uid;
-	
-	// used as id
-	private String username;
-	
+	private String id;
 	private String password;
-	
-/*	@NotEmpty(message="The User email must not be null")
-	private String email;*/
-	
-	
-	private boolean enabled=false;
-	
-	private String authority;
-	
-	
+	private boolean isAccountNonExpired; 
+	private boolean isAccountNonLocked;
+	private boolean isCredentialsNonExpired; 
+	private boolean isEnabled;
+	private Collection <? extends GrantedAuthority> authorities;
+
 }
