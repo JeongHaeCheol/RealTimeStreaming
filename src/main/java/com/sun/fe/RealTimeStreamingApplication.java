@@ -9,7 +9,6 @@ import org.springframework.context.annotation.PropertySource;
 
 
 @SpringBootApplication
-
 @PropertySource("config/config.properties")
 public class RealTimeStreamingApplication {
 
