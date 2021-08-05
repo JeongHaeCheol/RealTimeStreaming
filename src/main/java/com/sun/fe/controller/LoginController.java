@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.sun.fe.mapper.AccountMapper;
 import com.sun.fe.model.Account;
-import com.sun.fe.model.User;
 import com.sun.fe.service.AccountService;
 
 
@@ -50,7 +49,7 @@ public class LoginController {
 	@RequestMapping("/create")
 	public Account create() {
 		Account account = new Account();
-		account.setId("admin");
+		account.setId("admin3");
 		account.setPassword("1234");
 		accountService.save(account, "ROLE_ADMIN");
 		return account;

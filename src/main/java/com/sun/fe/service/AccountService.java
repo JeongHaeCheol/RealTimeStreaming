@@ -60,7 +60,7 @@ public class AccountService implements UserDetailsService {
 	
 	public Account save(Account account, String role) {
 
-		account.setPassword(passwordEncoder.encode(account.getPassword()));
+		//account.setPassword(passwordEncoder.encode(account.getPassword()));
 		account.setAccountNonExpired(true);
 		account.setAccountNonLocked(true);
 		account.setCredentialsNonExpired(true);

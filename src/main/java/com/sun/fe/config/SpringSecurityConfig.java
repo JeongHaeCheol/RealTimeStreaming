@@ -24,44 +24,34 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	AccountService accountService;
-	
+
 	@Autowired
 	CustomAuthenticationProvider customAuthenticationProvider;
-	
+
 	@Autowired
 	AuthFailureHandler authFailureHandler;
 
 	@Override
 	public void configure(WebSecurity web) throws Exception {
 		// 허용되어야 할 경로들
-		web.ignoring().antMatchers("/resources/**", "/dist/**", "/css/**", "/font-awesome/**", "/fonts/**", "/img/**",
-				"/js/**");
+		  web.ignoring().antMatchers("/resources/**", "/dist/**", "/css/**",
+		  "/font-awesome/**", "/fonts/**", "/img/**", "/js/**", "/docs/**");
+		 
 	}
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests().antMatchers("/", "/login", "/service", "/resources/**", "/create").permitAll()
-				.antMatchers("/admin").hasRole("ADMIN")
-				.anyRequest()
-				.authenticated()
-				.and()
-				.formLogin()
-				.usernameParameter("id")
-				.passwordParameter("password")
-				.loginPage("/login") /* 내가 만든 로그인 페이지 */
-				.failureHandler(authFailureHandler)
-				.defaultSuccessUrl("/")
-				.permitAll()
-				.and()
-				.logout()
-				.permitAll();
+				.antMatchers("/admin").hasRole("ADMIN").anyRequest().authenticated().and().formLogin()
+				.usernameParameter("id").passwordParameter("password").loginPage("/login") /* 내가 만든 로그인 페이지 */
+				.failureHandler(authFailureHandler).defaultSuccessUrl("/").permitAll().and().logout().permitAll();
 	}
 
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		//auth.userDetailsService(accountService);
+		// auth.userDetailsService(accountService);
 		auth.authenticationProvider(customAuthenticationProvider);
-		
+
 	}
 
 	@Bean
