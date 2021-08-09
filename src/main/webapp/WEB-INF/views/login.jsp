@@ -11,7 +11,7 @@
 <meta name="author"
 	content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
 <meta name="generator" content="Hugo 0.87.0">
-<title>Signin Template · Bootstrap v5.1</title>
+<title>Login Page</title>
 
 
 <link rel="canonical"
@@ -31,11 +31,6 @@
 
 
 
-<!-- Bootstrap core CSS -->
-<link href="/resources/docs/5.1/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
-	crossorigin="anonymous">
 
 <!-- Favicons -->
 <link rel="apple-touch-icon"

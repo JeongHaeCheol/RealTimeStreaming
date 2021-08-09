@@ -35,13 +35,13 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 	public void configure(WebSecurity web) throws Exception {
 		// 허용되어야 할 경로들
 		  web.ignoring().antMatchers("/resources/**", "/dist/**", "/css/**",
-		  "/font-awesome/**", "/fonts/**", "/img/**", "/js/**", "/docs/**");
+		  "/font-awesome/**", "/fonts/**", "/img/**", "/js/**", "/docs/**", "/assets/**");
 		 
 	}
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests().antMatchers("/", "/login", "/service", "/resources/**", "/create").permitAll()
+		http.authorizeRequests().antMatchers("/", "/login", "/service", "/resources/**", "/create", "/streaming").permitAll()
 				.antMatchers("/admin").hasRole("ADMIN").anyRequest().authenticated().and().formLogin()
 				.usernameParameter("id").passwordParameter("password").loginPage("/login") /* 내가 만든 로그인 페이지 */
 				.failureHandler(authFailureHandler).defaultSuccessUrl("/").permitAll().and().logout().permitAll();
