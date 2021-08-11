@@ -64,6 +64,16 @@
 		</dependency>
 
 
+		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-websocket -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-websocket</artifactId>
+			<version>2.5.2</version>
+		</dependency>
+
+
+
+
 		<dependency>
 			<groupId>org.apache.tomcat.embed</groupId>
 			<artifactId>tomcat-embed-jasper</artifactId>
@@ -75,7 +85,7 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
- 
+
 		<!-- https://mvnrepository.com/artifact/javax.validation/validation-api -->
 		<dependency>
 			<groupId>javax.validation</groupId>

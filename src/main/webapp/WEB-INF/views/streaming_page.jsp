@@ -69,8 +69,8 @@
 		</header>
 
 		<main class="px-3">
-			<video class="video-js vjs-big-play-centerd" id=example-video
-				width=600 height=300 class="video-js vjs-default-skin" controls>
+			<video class="video-js vjs-big-play-centerd  vjs-fluid" id=example-video
+				width=600 height=600 class="video-js vjs-default-skin" controls>
 				<source src="http://localhost:80/hls/live.m3u8"
 					type="application/x-mpegURL">
 			</video>
